@@ -32,22 +32,48 @@
       border-color: #c084fc;
     }
     
-    #counter-widget {
+    #counter-embed {
       width: 100%;
-      height: clamp(200px, 40vh, 250px); /* Flexible height for counter */
+      height: clamp(200px, 40vh, 250px);
       border-radius: 10px;
       background-color: #141414;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a855f7;
+      font-family: -apple-system, sans-serif;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    /* Hide fallback once loaded */
+    #counter-embed.loaded {
+      background-color: transparent;
     }
   </style>
 </head>
 <body>
   <div class="widget-container">
-    <!-- Target div for Indify script -->
-    <div id="counter-widget"></div>
+    <!-- Indify Embed Div (Official Method) -->
+    <div id="counter-embed">
+      Loading Counter... <!-- Fallback text -->
+    </div>
     
-    <!-- Indify Embed Script -->
-    <script src=""https://indify.co/embed/counter/gy2pPZEq1TYQjhEniDKC.js".js"></script>
+    <!-- Official Indify Script -->
+    <script>
+      (function(d, t) {
+        var s = d.createElement(t), options = {
+          'id': 'gy2pPZEq1TYQjhEniDKC',
+          'container': 'counter-embed'
+        };
+        s.src = 'https://indify.co/embed/counter.js';
+        s.async = true;
+        var x = d.getElementsByTagName(t)[0];
+        x.parentNode.insertBefore(s, x);
+        window.IndifyOptions = options;
+      })(document, 'script');
+    </script>
   </div>
 </body>
 </html>
-
