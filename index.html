@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Counter Widget</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: transparent;
+    }
+    
+    .widget-container {
+      background: linear-gradient(145deg, #111111, #1a1a1a);
+      border: 2px solid #a855f7;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.2),
+                  inset 0 0 10px rgba(168, 85, 247, 0.05);
+      padding: 10px;
+      width: 100%;
+      max-width: 380px;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+    }
+    
+    .widget-container:hover {
+      box-shadow: 0 0 35px rgba(168, 85, 247, 0.35),
+                  inset 0 0 15px rgba(168, 85, 247, 0.08);
+      border-color: #c084fc;
+    }
+    
+    #counter-widget {
+      width: 100%;
+      height: clamp(200px, 40vh, 250px); /* Flexible height for counter */
+      border-radius: 10px;
+      background-color: #141414;
+    }
+  </style>
+</head>
+<body>
+  <div class="widget-container">
+    <!-- Target div for Indify script -->
+    <div id="counter-widget"></div>
+    
+    <!-- Indify Embed Script -->
+    <script src="https://indify.co/embed/counter/gy2pPZEq1TYQjhEniDKC.js"></script>
+  </div>
+</body>
+</html>
